@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 
 
 var app = express();
-
+const cors = require('cors');
 
 
 app.use(logger('dev'));
@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cors({
+  origin: 'http://localhost:4200'
+}));
 
 app.use('/', indexRouter);
 
