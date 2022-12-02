@@ -8,4 +8,6 @@ const ClientesController = require('../controllers/clientesController');
 router.get('/', HomeController.index) ;
 router.get('/clientes', ClientesController.index) ;
 
+router.post('/clientes', ClientesController.create) ;
+
 module.exports = router;
